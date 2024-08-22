@@ -1,0 +1,15 @@
+https://getbootstrap.com/docs/5.3/forms/overview/#overview
+https://sweetalert2.github.io/#handling-buttons
+https://datatables.net/examples/styling/bootstrap5.html
+https://fontawesome.com/search?m=free&o=r
+https://cdnjs.com/libraries/font-awesome
+https://favicon.io/emoji-favicons/desktop-computer
+
+para subir git
+
+git init
+git remote add origin https://github.com/nina11nina/op.git
+git add .
+git commit -m "primer commit"
+git branch -M main
+git push -u origin main

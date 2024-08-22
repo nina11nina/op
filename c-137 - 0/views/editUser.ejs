@@ -1,0 +1,44 @@
+<%- include("template/header") %>
+<%- include("template/navbar") %>
+<%- include("template/aside")%>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <%- include('template/breadcrumb', {module: 'EDITAR USUARIO'}) %>
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Main row -->
+      <div class="row">
+        <% if (user) { %>            
+          <div class="container">
+              <form action="/updateUser" method="POST">
+                  <input hidden id="id" name="id" value="<%= user.id %>">
+                  <div class="mb-3">
+                  <label for="name" class="form-label">NOMBRE</label>
+                  <input type="text" class="form-control" id="name" name="name" value="<%= user.name %>" tabindex="1">
+                  <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                  </div>
+                  <div class="mb-3">
+                  <label for="email" class="form-label">@EMAIL</label>
+                  <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" tabindex="2">
+                  </div>
+                  <div class="mb-3 form-select">
+                  <select id="rol" name="rol" class="form-select" tabindex="3">
+                      <option <%= user.rol== 'Admin' ? 'selected' : '' %> value="Admin">Admin</option>
+                      <option <%= user.rol== 'Suscriptor' ? 'selected' : '' %> value="Suscriptor">Suscriptor</option>
+                  </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary" tabindex="4">GUARDAR</button>
+                  <a href="/users" class="btn btn-secondary">CANCELAR</a>
+              </form>      
+          </div>    
+        <% } %>               
+      </div>
+      <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<%- include("template/footer") %>
